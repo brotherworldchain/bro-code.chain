@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import "aos/dist/aos.css";
+import { Suspense } from "react";
 
 
 const geistSans = localFont({
@@ -29,11 +30,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-secondary overflow-hidden"
-      >
-        <Navbar />
-        {children}
-        <Footer />
+      <body className="bg-secondary overflow-hidden">
+        {" "}
+        <Suspense fallback={<div>Loading...</div>}>
+          <Navbar />
+          {children}
+          <Footer />
+        </Suspense>
       </body>
     </html>
   );
