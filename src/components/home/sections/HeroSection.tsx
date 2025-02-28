@@ -72,7 +72,7 @@ function HeroSection() {
 
             <div className=" text-white flex gap-4 sm:gap-[100px] items-center justify-center">
               <div>
-                <Header3>900 M</Header3>{" "}
+                <Header3>900 M</Header3>
                 <Paragraph2>Total Supply</Paragraph2>
               </div>
               <div>
