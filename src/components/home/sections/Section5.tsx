@@ -103,12 +103,16 @@ const Tokenomics = () => {
                       />
                     </svg>
                   </div>
-                  <h3 className="text-lg font-semibold">Reward Mechanisms</h3>
+                  <h3 className="text-lg font-semibold">Pre-Sale </h3>
                 </div>
                 <ul className="list-disc list-inside">
-                  <li>HOOL Rewards for token holders</li>
-                  <li>Staking rewards & exclusive NFTs</li>
-                  <li>Gamification & contests</li>
+                  {/* <li>Initial token distribution</li> */}
+                  <li>Supports early adopters with discounted $BRO-CODE.</li>
+                  <li>Funds initial liquidity and project development.</li>
+                  <li>
+                    Split into private and public sale phases for fair access.
+                  </li>
+                  <li>Ensures strong community involvement</li>
                 </ul>
               </div>
 
@@ -118,25 +122,30 @@ const Tokenomics = () => {
                   <div className="bg-red-600 rounded-full p-2 mr-2">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="h-6 w-6"
                       fill="none"
                       viewBox="0 0 24 24"
+                      strokeWidth={1.5}
                       stroke="currentColor"
+                      className="size-6"
                     >
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                        d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z"
                       />
                     </svg>
                   </div>
-                  <h3 className="text-lg font-semibold">Burn Mechanism</h3>
+                  <h3 className="text-lg font-semibold">Community & Rewards</h3>
                 </div>
                 <ul className="list-disc list-inside">
-                  <li>1% of every transaction burned</li>
-                  <li>Special event burns</li>
-                  <li>Increasing token scarcity</li>
+                  <li>
+                    Airdrops, giveaways, and social engagement incentives.
+                  </li>
+                  <li>
+                    Encourages viral challenges and peer-to-peer transfers.
+                  </li>
+                  <li>Rewards active participants and loyal holders.</li>
+                  <li>Strengthens long-term adoption</li>
                 </ul>
               </div>
 
@@ -159,12 +168,19 @@ const Tokenomics = () => {
                       />
                     </svg>
                   </div>
-                  <h3 className="text-lg font-semibold">Transaction Fees</h3>
+                  <h3 className="text-lg font-semibold">
+                    Liquidity & Exchange Listings
+                  </h3>
                 </div>
+
                 <ul className="list-disc list-inside">
-                  <li>2% Total transaction fee</li>
-                  <li>2% Total transaction fee</li>
-                  <li>1% Holder redistribution</li>
+                  <li>
+                    Ensures smooth trading on decentralized and centralized
+                    exchanges.
+                  </li>
+                  <li>Reduces volatility and enhances market stability.</li>
+                  <li>Provides liquidity for seamless transactions.</li>
+                  <li>Supports future exchange partnerships and listings.</li>
                 </ul>
               </div>
 
@@ -187,12 +203,20 @@ const Tokenomics = () => {
                       />
                     </svg>
                   </div>
-                  <h3 className="text-lg font-semibold">Vesting Schedule</h3>
+                  <h3 className="text-lg font-semibold">Fair & Fun Economy</h3>
                 </div>
                 <ul className="list-disc list-inside">
-                  <li>6-month initial lock period</li>
-                  <li>Monthly release over 1 year</li>
-                  <li>Long-term commitment focus</li>
+                  <li>$BRO-CODE is designed to be accessible and engaging.</li>
+                  <li>
+                    No complex mechanics—just a simple way to send and receive
+                    tokens.
+                  </li>
+                  <li>
+                    Encourages organic adoption through community-driven use.
+                  </li>
+                  <li>
+                    A social token built for fun, recognition, and camaraderie.
+                  </li>
                 </ul>
               </div>
 
@@ -220,6 +244,8 @@ const Tokenomics = () => {
                 <ul className="list-disc list-inside">
                   <li>Community engagement & voting</li>
                   <li>NFT purchases & marketplace</li>
+
+                  <li>Tipping, rewarding, and recognizing friends.</li>
                   <li>Charity donations</li>
                 </ul>
               </div>

@@ -36,7 +36,7 @@ function Section3() {
         >
           <Header3>About Us</Header3>
           <Paragraph1 className=" max-w-[883px] text-center ">
-            The Ultimate Symbol of Loyalty, Camaraderie, and Brotherhood
+            The Ultimate Symbol of Loyalty, Camaraderie, and Friendship
           </Paragraph1>
         </div>
         <div className=" grid col-span-1 xl:items-center xl:grid-cols-6 gap-[24px] xl:gap-[30px]">

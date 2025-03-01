@@ -9,7 +9,6 @@ body {
 
 html, body {
     overflow-x: hidden;
-    
 }
 
 @layer utilities {
@@ -79,7 +78,7 @@ html, body {
 }
 
 .animate-slider3 {
-  animation: slide3 90s linear infinite;
+  animation: slide3 50s linear infinite;
 }
 
 .hover-black::before {

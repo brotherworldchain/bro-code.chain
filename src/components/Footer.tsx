@@ -39,25 +39,18 @@ function section6() {
             epic moments. Send, share, and earn BRO-CODE Coin with your crew!
           </Paragraph1>
 
-          <div className=" flex gap-4 items-center">
-            <Link href="/">
+          <div className=" flex mt-4 gap-8 items-center">
+            <Link href="https://t.me/solanabrocode">
               <img
-                src="https://res.cloudinary.com/dcb4ilgmr/image/upload/v1729676533/utilities/templates/instagram_2_ujmgac.png"
-                alt="instagram"
+                src="https://res.cloudinary.com/dfwdzot6l/image/upload/v1740863365/telegram_tx8hjr.png"
+                alt="telegram"
                 className="w-[54px] h-[54px]"
               />
             </Link>
-            <Link href="/">
-              <img
-                src="https://res.cloudinary.com/dcb4ilgmr/image/upload/v1729676725/utilities/templates/facebook-app-symbol_x2whit.png"
-                alt="facebook"
-                className="w-[54px] h-[54px]"
-              />
-            </Link>
-            <Link href="/">
+            <Link href="https://x.com/solanabrocode?s=21">
               <img
                 src="https://res.cloudinary.com/dcb4ilgmr/image/upload/v1729675779/utilities/templates/twitter_3_sihd1i.png"
-                alt=""
+                alt="X"
                 className=" w-[54px] h-[54px]"
               />
             </Link>
@@ -65,7 +58,7 @@ function section6() {
         </div>
         <div className=" border-t pt-[24px] sm:pt-[32px] flex flex-wrap justify-center">
           <ParagraphLink2 className=" text-[#ECECEC] ">
-            © 2024 BRO-CODE Studio. All rights reserved.
+            © 2024 $BRO-CODE. All rights reserved.
           </ParagraphLink2>
         </div>
       </div>
