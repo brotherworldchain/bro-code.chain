@@ -19,6 +19,8 @@ interface ButtonProps {
   additionalClasses?: string;
   type?: any;
   disabled?: any;
+  target?: string;
+  rel?: string;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -32,6 +34,8 @@ const Button: React.FC<ButtonProps> = ({
   backgroundColor = "bg-primary",
   isLink = false,
   additionalClasses = "",
+  target = " ",
+  rel = " ",
 }) => {
   const commonClasses = `relative overflow-hidden group ${backgroundColor} ${color} ${border} ${body_Font.className} px-[24px] py-[12px] font-medium  text-[14px] sm:text-[14px] md:text-[16px] lg:text-[17px] xl:text-[18px] 2xl:text-[18px] rounded-full cursor-pointer text-center ${additionalClasses}`;
 
@@ -40,7 +44,14 @@ const Button: React.FC<ButtonProps> = ({
 
   if (isLink && href) {
     return (
-      <Link href={href} passHref className={commonClasses} onClick={onClick}>
+      <Link
+        target={target}
+        rel={rel}
+        href={href}
+        passHref
+        className={commonClasses}
+        onClick={onClick}
+      >
         <p>
           <span className={hoverEffectClasses} aria-hidden="true"></span>
           <span className="relative z-10">{text}</span>

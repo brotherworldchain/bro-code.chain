@@ -5,6 +5,8 @@ import { useSearchParams, usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
 import Button from "./Button";
 import { ParagraphLink1 } from "./Text";
+import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
+import { useWallet } from "@solana/wallet-adapter-react";
 
 const Navbar: React.FC = () => {
   const router = useRouter();
@@ -19,13 +21,14 @@ const Navbar: React.FC = () => {
     "home",
     "airdrop",
     "about",
-    "presale",
+    // "presale",
     "tokenomics",
     "roadmap",
   ];
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
   const closeMenu = () => setMenuOpen(false);
+  const { connected } = useWallet();
 
   const scrollToSection = (id: string) => {
     const section = document.getElementById(id);
@@ -114,14 +117,21 @@ const Navbar: React.FC = () => {
               </button>
             ))}
           </div>
-          <Button
+
+          {/* <Button
             text="Connect wallet"
             href="/contact-us"
             isLink={true}
             additionalClasses="border-0 min-w-[152px] hidden lg:block"
-          />
-          <div className="lg:hidden">
-            <button onClick={toggleMenu} className="focus:outline-none">
+          /> */}
+          <div className=" flex items-center gap-4">
+            <WalletMultiButton>
+              {connected ? undefined : "Connect Wallet"}
+            </WalletMultiButton>
+            <button
+              onClick={toggleMenu}
+              className="focus:outline-none lg:hidden"
+            >
               <img
                 src={
                   menuOpen
@@ -147,13 +157,16 @@ const Navbar: React.FC = () => {
                   </ParagraphLink1>
                 </button>
               ))}
-              <Button
-                text="Contact us"
+              <WalletMultiButton>
+                {connected ? undefined : "Connect Wallet"}
+              </WalletMultiButton>
+              {/* <Button
+                text="Connect Wallet"
                 href="/contact-us"
                 isLink={true}
                 onClick={toggleMenu}
                 additionalClasses="border-0 sm:min-w-[152px] min-w-full"
-              />
+              /> */}
             </div>
           </div>
         )}

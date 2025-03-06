@@ -2,7 +2,28 @@
 
 import React, { useState, useEffect } from "react";
 import AOS from "aos";
-import { Header4, Header5, Paragraph1, Paragraph2, Paragraph3, ParagraphLink1 } from "@/components/Text";
+import {
+  Header4,
+  Header5,
+  Paragraph1,
+  Paragraph2,
+  Paragraph3,
+  ParagraphLink1,
+} from "@/components/Text";
+import { useWallet } from "@solana/wallet-adapter-react";
+import {
+  Connection,
+  PublicKey,
+  Transaction,
+  SystemProgram,
+  sendAndConfirmTransaction,
+} from "@solana/web3.js";
+import { db } from "@/lib/firebase";
+import { collection, addDoc } from "firebase/firestore";
+
+// SOLANA SETTINGS
+const RPC_URL = process.env.RPC_URL?? "";
+const ADMIN_WALLET = process.env.ADMIN_WALLET?? "";
 
 function Section4() {
   const [timeLeft, setTimeLeft] = useState({
@@ -11,6 +32,10 @@ function Section4() {
     minutes: 53,
     seconds: 2,
   });
+  const { publicKey, sendTransaction } = useWallet();
+  const [amount, setAmount] = useState(""); // SOL amount
+  const [broAmount, setBroAmount] = useState(""); // BRO-Code equivalent
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     AOS.init({
@@ -39,6 +64,46 @@ function Section4() {
 
     return () => clearInterval(interval);
   }, []);
+
+  // Handle transaction when user clicks "Buy"
+  const handleBuy = async () => {
+    if (!publicKey || !amount)
+      return alert("Connect wallet and enter an amount!");
+
+    try {
+      setLoading(true);
+      const connection = new Connection(RPC_URL, "confirmed");
+      const transaction = new Transaction().add(
+        SystemProgram.transfer({
+          fromPubkey: publicKey,
+          toPubkey: new PublicKey(ADMIN_WALLET),
+          lamports: parseFloat(amount) * 1e9, // Convert SOL to lamports
+        })
+      );
+
+      const signature = await sendTransaction(transaction, connection);
+      await connection.confirmTransaction(signature, "confirmed");
+
+      // Store order details in Firestore
+      await addDoc(collection(db, "orders"), {
+        wallet: publicKey.toString(),
+        amountSOL: parseFloat(amount),
+        amountBRO: parseFloat(broAmount),
+        txSignature: signature,
+        status: "pending", // Admin will process later
+        timestamp: new Date(),
+      });
+
+      alert("Transaction successful! Your order is pending approval.");
+      setAmount("");
+      setBroAmount("");
+    } catch (error) {
+      console.error("Transaction Failed:", error);
+      alert("Transaction failed. Try again!");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div
@@ -102,9 +167,7 @@ function Section4() {
             </div> */}
 
             <div className="mt-6">
-              <Paragraph3 className="block font-medium">
-                You Send:
-              </Paragraph3>
+              <Paragraph3 className="block font-medium">You Send:</Paragraph3>
               <div className="border p-4 rounded w-full gap-2 bg-white bg-opacity-10 mt-1 flex items-center">
                 <img
                   src="https://res.cloudinary.com/dfwdzot6l/image/upload/v1740755016/download_1_v4pkcj.png"
@@ -115,6 +178,12 @@ function Section4() {
                   type="number"
                   placeholder="0.00"
                   className="bg-white bg-opacity-0 outline-none w-full"
+                  value={amount}
+                  onChange={(e) => {
+                    setAmount(e.target.value);
+                    // @ts-ignore
+                    setBroAmount(e.target.value * 20000); // Example conversion rate
+                  }}
                 />
               </div>
 
@@ -131,11 +200,16 @@ function Section4() {
                   type="number"
                   placeholder="0.00"
                   className="bg-white bg-opacity-0 outline-none w-full"
+                  value={broAmount}
                 />
               </div>
             </div>
-            <button className="bg- border hover:bg-primary text-white px-6 py-3 rounded-full w-full mt-6">
-              Connect Wallet
+            <button
+              onClick={handleBuy}
+              disabled={loading}
+              className="bg- border hover:bg-primary text-white px-6 py-3 rounded-full w-full mt-6"
+            >
+              {loading ? "Processing..." : "Buy"}
             </button>
           </div>
         </div>

@@ -36,19 +36,19 @@ const Tokenomics = () => {
                 <div className="flex flex-col items-start border-b gap-4 w-full">
                   <Paragraph1 className="text-lg  border-gray-700 pb-2 mb-2">
                     Community Rewards{" "}
-                    <span className="text-l_green">30% (270,000,000)</span>
+                    <span className="text-l_green">35% (315,000,000)</span>
                   </Paragraph1>
                 </div>
                 <div className="flex flex-col items-start border-b gap-4 w-full">
                   <Paragraph1 className="text-lg  border-gray-700 pb-2 mb-2">
                     Liquidity Pool{" "}
-                    <span className="text-l_green">25% (225,000,000)</span>
+                    <span className="text-l_green">30% (270,000,000)</span>
                   </Paragraph1>
                 </div>
                 <div className="flex flex-col items-start border-b gap-4 w-full">
                   <Paragraph1 className="text-lg  border-gray-700 pb-2 mb-2">
                     Team Allocation{" "}
-                    <span className="text-l_green">20% (180,000,000)</span>
+                    <span className="text-l_green">10% (90,000,000)</span>
                   </Paragraph1>
                 </div>
               </div>

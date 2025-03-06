@@ -114,3 +114,37 @@ html, body {
     border-radius: 10px; 
     
   }
+
+  @font-face {
+  font-family: "ClashDisplay"; /* Change to your font name */
+  src: url("./fonts/ClashDisplay/fonts/ClashDisplay-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+  .wallet-adapter-button {
+    background-color: transparent !important;
+    border: 2px !important;
+    color: #fff !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    font-family: "ClashDisplay" !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    height: 48px !important;
+    line-height: 48px !important;
+    padding: 0 24px !important;
+    border-radius: 50px !important;
+}
+
+.wallet-adapter-button-trigger {
+    background-color: #ff007e !important;
+}
+
+.wallet-adapter-button:hover {
+  /* opacity: 0.8 !important; */
+  background-color: #000000 !important;
+  border-color: #ff007e !important;
+}

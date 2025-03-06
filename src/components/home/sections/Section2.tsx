@@ -11,27 +11,109 @@ import {
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import AOS from "aos";
+import { addUserIfNew, getReferralLink } from "@/utils/auth";
+import { useWallet } from "@solana/wallet-adapter-react";
+import { db } from "@/lib/firebase";
+import {
+  collection,
+  getDocs,
+  query,
+  where,
+  updateDoc,
+  doc,
+  arrayUnion,
+  increment,
+} from "firebase/firestore";
+
+
 
 function AirdropSection() {
   const [points, setPoints] = useState<number>(0);
   const [referralLink, setReferralLink] = useState<string>(
-    "https://brocode.com/ref?user=12345"
+    "https://brocode.com/?ref=12345"
   );
+  const { publicKey, connected } = useWallet();
+  const [pendingTask, setPendingTask] = useState<string | null>(null);
+  const [totalPoints, setTotalPoints] = useState<number>(0);
+  const [completedTasks, setCompletedTasks] = useState<string[]>([]);
+  const [tasks, setTasks] = useState([
+    {
+      id: "1",
+      title: "Follow @brocode1",
+      points: 50,
+      action: "Follow",
+      link: "sdh",
+    },
+    {
+      id: "2",
+      title: "Follow @brocode2",
+      points: 50,
+      action: "Follow",
+      link: "sdh",
+    },
+    {
+      id: "3",
+      title: "Visit Sponsored Link 1",
+      points: 50,
+      action: "Visit",
+      link: "https://chatgpt.com/",
+    },
+  ]);
+
+  // Fetch user data and set referral link
+ useEffect(() => {
+   if (connected && publicKey) {
+     addUserIfNew(publicKey.toString()).then(async (user) => {
+       if (user) {
+         setReferralLink(getReferralLink(user.referralCode));
+
+         // Fetch user balance and completed tasks from Firestore
+         const userQuery = query(
+           collection(db, "users"),
+           where("wallet", "==", publicKey.toString())
+         );
+         const userSnapshot = await getDocs(userQuery);
+         if (!userSnapshot.empty) {
+           const userData = userSnapshot.docs[0].data();
+           setPoints(userData.balance || 0);
+           setTotalPoints(userData.totalPoints || 0);
+           setCompletedTasks(userData.completedTasks || []);
+         }
+       }
+     });
+   }
+ }, [connected, publicKey]);
 
   useEffect(() => {
     AOS.init({ duration: 1000 });
-    setPoints(500);
+    // setPoints(500);
   }, []);
 
-  const tasks = [
-    { title: "Follow @brocode1", points: 50, link: "#", action: "Follow" },
-    { title: "Follow @brocode2", points: 50, link: "#", action: "Follow" },
-    { title: "Follow @brocode3", points: 50, link: "#", action: "Follow" },
-    { title: "Visit Sponsored Link 1", points: 50, link: "#", action: "Visit" },
-    { title: "Visit Sponsored Link 2", points: 50, link: "#", action: "Visit" },
-    { title: "Visit Sponsored Link 3", points: 50, link: "#", action: "Visit" },
-    { title: "Visit Sponsored Link 4", points: 50, link: "#", action: "Visit" },
-  ];
+  // Task completion logic (updates Firestore balance)
+  const handleTaskClick = async (task: any) => {
+    if (!publicKey || completedTasks.includes(task.id)) return;
+
+    const userQuery = query(
+      collection(db, "users"),
+      where("wallet", "==", publicKey.toString())
+    );
+    const userSnapshot = await getDocs(userQuery);
+
+    if (!userSnapshot.empty) {
+      const userDoc = userSnapshot.docs[0];
+      await updateDoc(doc(db, "users", userDoc.id), {
+        balance: increment(task.points),
+        totalPoints: increment(task.points),
+        completedTasks: arrayUnion(task.id),
+      });
+
+      // Update UI instantly
+      setPoints((prevPoints) => prevPoints + task.points);
+      setTotalPoints((prevTotalPoints) => prevTotalPoints + task.points);
+      setCompletedTasks((prevTasks) => [...prevTasks, task.id]);
+    }
+  };
+
 
   const copyReferral = () => {
     navigator.clipboard.writeText(referralLink);
@@ -62,7 +144,9 @@ function AirdropSection() {
       </div>
       <div className="container1 mt-12 flex flex-col w-full items-center   ">
         <div className="w-full max-w-[800px] border border-primary p-4 bg-white bg-opacity-30 rounded-lg">
-          <Paragraph1 className=" text-gray-400 relative">Balance</Paragraph1>
+          <Paragraph1 className=" text-gray-400 relative">
+            Total BRO-CODE points:
+          </Paragraph1>
           <div className="flex  justify-center flex-col  items-center mb-8">
             {" "}
             <div className=" w-full max-w-[800px] flex flex-col items-center rounded-lg bg-secondary bg-opacity-70 p-4 sm:-pb-8 relative">
@@ -89,7 +173,20 @@ function AirdropSection() {
                     Earn {task.points} Points
                   </Paragraph2>
                 </div>
-                <Button text={task.action} href={task.link} />
+                <Button
+                  text={completedTasks.includes(task.id) ? "Done" : task.action}
+                  isLink={true}
+                  href={task.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => handleTaskClick(task)}
+                  additionalClasses={`- ${
+                    completedTasks.includes(task.id)
+                      ? "bg-black"
+                      : "bg-"
+                  } text-white`}
+                  disabled={completedTasks.includes(task.id)}
+                />
               </li>
             ))}
           </ul>
@@ -101,7 +198,12 @@ function AirdropSection() {
           className="mt-2 bg-gray-800 flex justify-center p-3 rounded-lg inline-block- gap-4 w-fit cursor-pointer"
           onClick={copyReferral}
         >
-          {referralLink}{" "}
+          {connected ? (
+            <>{referralLink}</>
+          ) : (
+            <p>Connect your wallet to get your referral link.</p>
+          )}{" "}
+          {/* {referralLink}{" "} */}
           <span>
             <svg
               xmlns="http://www.w3.org/2000/svg"

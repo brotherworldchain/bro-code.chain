@@ -45,7 +45,7 @@ function HeroSection() {
             <Header1 className="text-white mt-4 xl:mt-0">
               Celebrating <span className="text-primary">Loyalty</span>,
               Strengthening <span className="text-primary">Connections,</span>{" "}
-              Sending the Vibes, and Keep the Fun
+              Send the Vibes, and Keep the Fun
               <span className="text-primary"> Rolling.</span>
             </Header1>
             <Paragraph3 className="mt-[16px] mb-[30px] text-white">

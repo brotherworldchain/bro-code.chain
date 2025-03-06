@@ -69,7 +69,7 @@ const Overview: React.FC = () => {
         <Section3 />
       </div>
       <div id="presale">
-        <Section4 />
+        {/* <Section4 /> */}
       </div>
       <div id="tokenomics">
         <Section5 />
