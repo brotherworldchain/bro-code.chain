@@ -23,7 +23,8 @@ const Navbar: React.FC = () => {
     "about",
     // "presale",
     "tokenomics",
-    "roadmap",
+    // "roadmap",
+    "Hot-Venues (Coming Soon)",
   ];
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
@@ -160,13 +161,6 @@ const Navbar: React.FC = () => {
               <WalletMultiButton>
                 {connected ? undefined : "Connect Wallet"}
               </WalletMultiButton>
-              {/* <Button
-                text="Connect Wallet"
-                href="/contact-us"
-                isLink={true}
-                onClick={toggleMenu}
-                additionalClasses="border-0 sm:min-w-[152px] min-w-full"
-              /> */}
             </div>
           </div>
         )}

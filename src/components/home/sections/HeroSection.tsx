@@ -42,7 +42,7 @@ function HeroSection() {
         <div className=" container1 flex flex-col justify-center gap-2 items-center ">
           {" "}
           <div className=" text-center " data-aos="zoom-in-up">
-            <Header1 className="text-white mt-4 xl:mt-0">
+            <Header1 className="text-white mt-4 xl:mt-0"> The Biggest party on Solana Network
               Celebrating <span className="text-primary">Loyalty</span>,
               Strengthening <span className="text-primary">Connections,</span>{" "}
               Send the Vibes, and Keep the Fun
@@ -55,8 +55,8 @@ function HeroSection() {
             <div className="  flex justify-center mb-[50px] items-center">
               <div className="flex w-full justify-center xl:flex-row flex-col items-center mt-4 gap-[24px] xl:gap-[32px]">
                 <Button
-                  text="Pre-Sale"
-                  onClick={() => handleNavigation("presale")}
+                  text="Start Earning"
+                  onClick={() => handleNavigation("airdrop")}
                   additionalClasses="border-primary xl:w-fit w-full "
                 />
                 <Button

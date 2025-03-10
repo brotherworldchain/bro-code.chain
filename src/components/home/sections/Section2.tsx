@@ -25,100 +25,124 @@ import {
   increment,
 } from "firebase/firestore";
 
-
-
 function AirdropSection() {
   const [points, setPoints] = useState<number>(0);
-  const [referralLink, setReferralLink] = useState<string>(
-    "https://brocode.com/?ref=12345"
-  );
+  const [referralLink, setReferralLink] = useState<string>("");
   const { publicKey, connected } = useWallet();
-  const [pendingTask, setPendingTask] = useState<string | null>(null);
   const [totalPoints, setTotalPoints] = useState<number>(0);
   const [completedTasks, setCompletedTasks] = useState<string[]>([]);
-  const [tasks, setTasks] = useState([
-    {
-      id: "1",
-      title: "Follow @brocode1",
-      points: 50,
-      action: "Follow",
-      link: "sdh",
-    },
-    {
-      id: "2",
-      title: "Follow @brocode2",
-      points: 50,
-      action: "Follow",
-      link: "sdh",
-    },
-    {
-      id: "3",
-      title: "Visit Sponsored Link 1",
-      points: 50,
-      action: "Visit",
-      link: "https://chatgpt.com/",
-    },
-  ]);
 
-  // Fetch user data and set referral link
- useEffect(() => {
-   if (connected && publicKey) {
-     addUserIfNew(publicKey.toString()).then(async (user) => {
-       if (user) {
-         setReferralLink(getReferralLink(user.referralCode));
+  useEffect(() => {
+    if (connected && publicKey) {
+      (async () => {
+        const walletAddress = publicKey.toString();
+        const userQuery = query(collection(db, "users"), where("wallet", "==", walletAddress));
+        const userSnapshot = await getDocs(userQuery);
 
-         // Fetch user balance and completed tasks from Firestore
-         const userQuery = query(
-           collection(db, "users"),
-           where("wallet", "==", publicKey.toString())
-         );
-         const userSnapshot = await getDocs(userQuery);
-         if (!userSnapshot.empty) {
-           const userData = userSnapshot.docs[0].data();
-           setPoints(userData.balance || 0);
-           setTotalPoints(userData.totalPoints || 0);
-           setCompletedTasks(userData.completedTasks || []);
-         }
-       }
-     });
-   }
- }, [connected, publicKey]);
+        let user;
+        if (userSnapshot.empty) {
+          // New user: Add to Firestore
+          user = await addUserIfNew(walletAddress);
+        } else {
+          user = userSnapshot.docs[0].data();
+        }
+
+        if (user) {
+          setReferralLink(getReferralLink(user.referralCode));
+          setPoints(user.balance || 0);
+          setTotalPoints(user.totalPoints || 0);
+          setCompletedTasks(user.completedTasks || []);
+          
+          // Handle referral logic
+          const urlParams = new URLSearchParams(window.location.search);
+          const refCode = urlParams.get("ref");
+
+          if (refCode && user.referralCode !== refCode) {
+            // Check if referrer exists
+            const refQuery = query(collection(db, "users"), where("referralCode", "==", refCode));
+            const refSnapshot = await getDocs(refQuery);
+
+            if (!refSnapshot.empty) {
+              const refDoc = refSnapshot.docs[0];
+              await updateDoc(doc(db, "users", refDoc.id), {
+                referralCount: increment(1),
+                balance: increment(200),
+              });
+            }
+          }
+        }
+      })();
+    }
+  }, [connected, publicKey]);
 
   useEffect(() => {
     AOS.init({ duration: 1000 });
-    // setPoints(500);
   }, []);
 
-  // Task completion logic (updates Firestore balance)
   const handleTaskClick = async (task: any) => {
     if (!publicKey || completedTasks.includes(task.id)) return;
 
-    const userQuery = query(
-      collection(db, "users"),
-      where("wallet", "==", publicKey.toString())
-    );
+    const userQuery = query(collection(db, "users"), where("wallet", "==", publicKey.toString()));
     const userSnapshot = await getDocs(userQuery);
 
     if (!userSnapshot.empty) {
       const userDoc = userSnapshot.docs[0];
       await updateDoc(doc(db, "users", userDoc.id), {
-        balance: increment(task.points),
-        totalPoints: increment(task.points),
+        balance: increment(50),
+        totalPoints: increment(50),
         completedTasks: arrayUnion(task.id),
       });
 
       // Update UI instantly
-      setPoints((prevPoints) => prevPoints + task.points);
-      setTotalPoints((prevTotalPoints) => prevTotalPoints + task.points);
+      setPoints((prevPoints) => prevPoints + 50);
+      setTotalPoints((prevTotalPoints) => prevTotalPoints + 50);
       setCompletedTasks((prevTasks) => [...prevTasks, task.id]);
     }
   };
-
 
   const copyReferral = () => {
     navigator.clipboard.writeText(referralLink);
     alert("Referral link copied!");
   };
+
+  const tasks = [
+    {
+      id: "1",
+      title: "Connect your wallet",
+      points: 50,
+      action: "Connect",
+      link: "/",
+    },
+    {
+      id: "2",
+      title: "Follow us on Twitter",
+      points: 50,
+      action: "Follow",
+      link: "https://twitter.com/",
+    },
+    {
+      id: "3",
+      title: "Join our Discord server",
+      points: 50,
+      action: "Join",
+      link: "https://discord.com/",
+    },
+    {
+      id: "4",
+      title: "Retweet our latest tweet",
+      points: 50,
+      action: "Retweet",
+      link: "https://twitter.com/",
+    },
+    {
+      id: "5",
+      title: "Invite a friend",
+      points: 200,
+      action: "Invite",
+      link: "/",
+    },
+  ];
+
 
   return (
     <div
@@ -181,9 +205,7 @@ function AirdropSection() {
                   rel="noopener noreferrer"
                   onClick={() => handleTaskClick(task)}
                   additionalClasses={`- ${
-                    completedTasks.includes(task.id)
-                      ? "bg-black"
-                      : "bg-"
+                    completedTasks.includes(task.id) ? "bg-black" : "bg-"
                   } text-white`}
                   disabled={completedTasks.includes(task.id)}
                 />
