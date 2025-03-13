@@ -100,7 +100,7 @@ const Navbar: React.FC = () => {
     <div className="bg-bg_blue sm:bg-opacity-50 sm:py-[8px] fixed flex w-full z-20">
       <div className="w-full">
         <div className="container1 flex justify-between w-full items-center">
-          <div className="flex items-center">
+          <div className="flex items-center ">
             <img
               src="/images/logo.png"
               alt=""

@@ -111,7 +111,7 @@ function AirdropSection() {
       title: "Connect your wallet",
       points: 50,
       action: "Connect",
-      link: "/",
+      link: "#",
     },
     {
       id: "2",
@@ -134,13 +134,7 @@ function AirdropSection() {
       action: "Retweet",
       link: "https://twitter.com/",
     },
-    {
-      id: "5",
-      title: "Invite a friend",
-      points: 200,
-      action: "Invite",
-      link: "/",
-    },
+   
   ];
 
 
@@ -150,7 +144,7 @@ function AirdropSection() {
       className=" py-[50px] relative text-white"
       style={{
         backgroundImage:
-          "url('https://res.cloudinary.com/dfwdzot6l/image/upload/v1740696028/Gemini_Generated_Image_9y1cuw9y1cuw9y1c_twhtdx.jpg')",
+          "url('https://res.cloudinary.com/dfwdzot6l/image/upload/v1741897248/Gemini_Generated_Image_e4ny80e4ny80e4ny_jiguel.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
@@ -158,29 +152,29 @@ function AirdropSection() {
       <div className="absolute inset-0 bg-black opacity-80"></div>{" "}
       <div className="container1 text-center" data-aos="fade-up">
         <Header3>
-          Earn <span className="text-primary">BRO-CODE Points</span> & Get
+          Earn <span className="text-primary">Party Monster Points</span> & Get
           Rewarded!
         </Header3>
         <Paragraph1 className="max-w-[800px] mx-auto mt-4">
-          Complete tasks, invite friends, and track your BRO-CODE Points
-          balance. More points mean more rewards!
+          Complete tasks, invite friends, and track your $PAMON Points balance.
+          More points mean more rewards!
         </Paragraph1>
       </div>
       <div className="container1 mt-12 flex flex-col w-full items-center   ">
         <div className="w-full max-w-[800px] border border-primary p-4 bg-white bg-opacity-30 rounded-lg">
           <Paragraph1 className=" text-gray-400 relative">
-            Total BRO-CODE points:
+            Total Balance points:
           </Paragraph1>
           <div className="flex  justify-center flex-col  items-center mb-8">
             {" "}
             <div className=" w-full max-w-[800px] flex flex-col items-center rounded-lg bg-secondary bg-opacity-70 p-4 sm:-pb-8 relative">
               <Header4 className=" text-2xl font-bold">
                 <span className="text-white">{points}.00</span>{" "}
-                <span className=" text-[12px]"> BRO-CODE</span>
+                <span className=" text-[12px]"> PAMON</span>
               </Header4>
             </div>
             <Paragraph1 className=" text-gray-400 relative">
-              (Your reward would be converted to $BRO-CODE and sent directly to
+              (Your reward would be converted to $PAMON and sent directly to
               your connected wallet)
             </Paragraph1>
           </div>{" "}

@@ -3,15 +3,15 @@ import React from "react";
 
 function ElevatingBrands() {
   const pictureTypes = [
-    "Loyalty",
-    "Camaraderie",
     "Friendship",
-    "Rewards",
     "Fun",
+    "Energy",
+    "Rewards",
+    "Access",
+    "Vibes",
+    "Nonstop Parties",
     "and More",
   ];
-;
-
   // Generate an array of 300 items cycling through the picture types
   const brands = Array.from(
     { length: 300 },
@@ -23,7 +23,7 @@ function ElevatingBrands() {
       <div className="slider-container3 overflow-hidden whitespace-nowrap">
         <div className="slider-content3 flex gap-[22px] animate-slider3">
           {brands.map((brand, index) => (
-            <React.Fragment key={index} >
+            <React.Fragment key={index}>
               <Header4>{brand}</Header4>
               <img
                 src="/images/logo.png"

@@ -34,7 +34,7 @@ function Section4() {
   });
   const { publicKey, sendTransaction } = useWallet();
   const [amount, setAmount] = useState(""); // SOL amount
-  const [broAmount, setBroAmount] = useState(""); // BRO-Code equivalent
+  const [broAmount, setBroAmount] = useState(""); // $PAMON equivalent
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -124,7 +124,7 @@ function Section4() {
         >
           <div className="bg-secondary p-6 rounded-lg  text-white shadow-lg">
             <Header4 className="text-center ">
-              BRO-CODE Presale is Now Live!
+              $PAMON Presale is Now Live!
             </Header4>
             <div className="flex justify-center p-4 bg- gap-4 bg-gradient-to-r opacity-60 from-primary to-secondary rounded-lg border mt-4 text-xl font-semibold">
               <div className="flex flex-col items-center">

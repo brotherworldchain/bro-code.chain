@@ -12,8 +12,7 @@ function HeroSection() {
       duration: 3000,
     });
   });
- 
-  
+
   const handleNavigation = (section: string) => {
     // Scroll to section
     const target = document.getElementById(section);
@@ -26,14 +25,13 @@ function HeroSection() {
     }
   };
 
-
   return (
     <div id="home" className="  ">
       <div
         className=" pt-[100px] sm:pt-[140px] relative"
         style={{
           backgroundImage:
-            "url('https://res.cloudinary.com/dfwdzot6l/image/upload/v1740685463/Gemini_Generated_Image_aybi4zaybi4zaybi_hgwzus.jpg')",
+            "url('https://res.cloudinary.com/dfwdzot6l/image/upload/v1741893399/gshdshjdd_iptnhu.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -42,15 +40,24 @@ function HeroSection() {
         <div className=" container1 flex flex-col justify-center gap-2 items-center ">
           {" "}
           <div className=" text-center " data-aos="zoom-in-up">
-            <Header1 className="text-white mt-4 xl:mt-0"> The Biggest party on Solana Network
-              Celebrating <span className="text-primary">Loyalty</span>,
-              Strengthening <span className="text-primary">Connections,</span>{" "}
-              Send the Vibes, and Keep the Fun
-              <span className="text-primary"> Rolling.</span>
+            {" "}
+            <Header1 className="text-white mt-4 xl:mt-0">
+              The{" "}
+              <span className="bg-gradient-to-r from-primary to-l_green bg-clip-text text-transparent">
+                {" "}
+                Biggest
+              </span>{" "}
+              Party on the Solana Network! Revolutionizing
+              <span className="bg-gradient-to-r from-primary to-l_green bg-clip-text text-transparent">
+                {" "}
+                NFT Ticketing{" "}
+              </span>{" "}
+              and event planning World wide.
             </Header1>
             <Paragraph3 className="mt-[16px] mb-[30px] text-white">
-              A Social Token for Loyalty, Camaraderie, Fun and legendary moments
-              with friends.
+              $PAMON is more than a token—it's your all-access pass to the
+              future of events. Own, trade, and experience the world’s best
+              NFT-powered parties.
             </Paragraph3>
             <div className="  flex justify-center mb-[50px] items-center">
               <div className="flex w-full justify-center xl:flex-row flex-col items-center mt-4 gap-[24px] xl:gap-[32px]">
@@ -69,7 +76,6 @@ function HeroSection() {
                 />
               </div>
             </div>
-
             <div className=" text-white flex gap-4 sm:gap-[100px] items-center justify-center">
               <div>
                 <Header3>900 M</Header3>
