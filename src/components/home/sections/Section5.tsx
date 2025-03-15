@@ -53,8 +53,8 @@ const Tokenomics = () => {
               </div>
               <div className="mt-8 flex w-full justify-center border rounded-full">
                 <img
-                  src="https://res.cloudinary.com/dfwdzot6l/image/upload/v1741901619/Gemini_Generated_Image_wucs5dwucs5dwucs_guhynb.jpg"
-                  alt="$GOOD Coin"
+                  src="https://res.cloudinary.com/dfwdzot6l/image/upload/v1742073211/hj_j4thty.jpg"
+                  alt="Party monster"
                   className=" object-cover rounded-full"
                 />
               </div>
@@ -82,7 +82,7 @@ const Tokenomics = () => {
           </div>
 
           <div className="flex flex-col items-center justify-center mt-[100px]">
-            <div className="flex flex-col md:flex-row bg-gray-900 bg-opacity-50 text-white rounded-lg shadow-lg p-4 md:p-8">
+            <div className="flex flex-col md:flex-row bg-gray-900 bg-opacity-60 text-white rounded-lg shadow-lg p-4 md:p-8">
               {/* NFT Ticketing & Events */}
               <div className="flex-1 p-4 border-b md:border-b-0 md:border-r border-gray-800">
                 <div className="flex items-center mb-4">

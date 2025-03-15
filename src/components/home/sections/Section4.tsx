@@ -171,7 +171,7 @@ function Section4() {
               <div className="border p-4 rounded w-full gap-2 bg-white bg-opacity-10 mt-1 flex items-center">
                 <img
                   src="https://res.cloudinary.com/dfwdzot6l/image/upload/v1740755016/download_1_v4pkcj.png"
-                  alt=""
+                  alt="Party monster"
                   className=" h-[40px] rounded-full"
                 />{" "}
                 <input
@@ -193,7 +193,7 @@ function Section4() {
               <div className="border p-4 gap-2 rounded w-full bg-white bg-opacity-10 mt-1 flex items-center">
                 <img
                   src="https://res.cloudinary.com/dfwdzot6l/image/upload/v1740697959/Gemini_Generated_Image_klp71sklp71sklp7logo_eg3j2g.jpg"
-                  alt=""
+                  alt="Party monster"
                   className=" h-[40px] rounded-full"
                 />{" "}
                 <input
