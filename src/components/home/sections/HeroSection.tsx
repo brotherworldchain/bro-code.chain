@@ -36,7 +36,7 @@ function HeroSection() {
           backgroundPosition: "center",
         }}
       >
-        <div className="absolute inset-0 bg-black opacity-80"></div>{" "}
+        <div className="absolute inset-0 bg-black opacity-60"></div>{" "}
         <div className=" container1 flex flex-col justify-center gap-2 items-center ">
           {" "}
           <div className=" text-center " data-aos="zoom-in-up">

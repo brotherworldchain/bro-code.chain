@@ -23,7 +23,7 @@ function section6() {
         backgroundPosition: "center",
       }}
     >
-      <div className="absolute inset-0 bg-black opacity-80"></div>{" "}
+      <div className="absolute inset-0 bg-black opacity-60"></div>{" "}
       <div
         className=" container1 pt-[24px] xl:pt-[100px] text-white"
         data-aos="fade-up"
@@ -32,12 +32,12 @@ function section6() {
         <div className=" flex flex-col xl:gap-[24px] items-center w-full text-center pb-[64px]">
           <Header1Plus>
             Join the <span className="text-primary">$PAMON</span> Revolution –
-            Where Parties Meet Web3!
+            Where Events Meet Web3!
           </Header1Plus>
           <Paragraph1 className="max-w-[883px] text-center">
-            Be part of the biggest decentralized event community! Earn, trade,
-            and access exclusive events with $PAMON. Your ticket to global
-            parties starts here!
+            Be part of the biggest decentralized event community! Secure,
+            tradeable, and global—giving you seamless access to exclusive events
+            and beyond.
           </Paragraph1>
 
           <div className=" flex mt-4 gap-8 items-center">

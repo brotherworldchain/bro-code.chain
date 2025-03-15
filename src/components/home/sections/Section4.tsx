@@ -116,7 +116,7 @@ function Section4() {
         backgroundPosition: "center",
       }}
     >
-      <div className="absolute inset-0 bg-black opacity-80"></div>{" "}
+      <div className="absolute inset-0 bg-black opacity-60"></div>{" "}
       <div className="container1 py-[100px] flex w-full justify-center">
         <div
           className="bg-gradient-to-r w-full max-w-[800px] opacity-60 from-primary to-l_green p-2 rounded-lg text-white mt-12-"

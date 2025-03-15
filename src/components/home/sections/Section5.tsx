@@ -12,7 +12,7 @@ const Tokenomics = () => {
         backgroundPosition: "center",
       }}
     >
-      <div className="absolute inset-0 bg-black opacity-90"></div>{" "}
+      <div className="absolute inset-0 bg-black opacity-60"></div>{" "}
       <div className=" relative">
         <div className=" container1 text-white py-16- px-8 flex flex-col justify-center items-center">
           <div className=" w-full =max-w-[1000px]  text-center flex flex-col gap-4 justify-center items-center">
@@ -86,7 +86,22 @@ const Tokenomics = () => {
               {/* NFT Ticketing & Events */}
               <div className="flex-1 p-4 border-b md:border-b-0 md:border-r border-gray-800">
                 <div className="flex items-center mb-4">
-                  <div className="bg-blue-600 rounded-full p-2 mr-2">🎟️</div>
+                  <div className="bg-blue-600 rounded-full p-2 mr-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="size-6"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M16.5 6v.75m0 3v.75m0 3v.75m0 3V18m-9-5.25h5.25M7.5 15h3M3.375 5.25c-.621 0-1.125.504-1.125 1.125v3.026a2.999 2.999 0 0 1 0 5.198v3.026c0 .621.504 1.125 1.125 1.125h17.25c.621 0 1.125-.504 1.125-1.125v-3.026a2.999 2.999 0 0 1 0-5.198V6.375c0-.621-.504-1.125-1.125-1.125H3.375Z"
+                      />
+                    </svg>
+                  </div>
                   <h3 className="text-lg font-semibold">
                     NFT Ticketing & Global Events
                   </h3>
@@ -107,7 +122,22 @@ const Tokenomics = () => {
               {/* Holder Rewards & Dividends */}
               <div className="flex-1 p-4 border-b md:border-b-0 md:border-r border-gray-800">
                 <div className="flex items-center mb-4">
-                  <div className="bg-yellow-500 rounded-full p-2 mr-2">💰</div>
+                  <div className="bg-yellow-500 rounded-full p-2 mr-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="size-6"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                      />
+                    </svg>
+                  </div>
                   <h3 className="text-lg font-semibold">
                     Holder Rewards & Dividends
                   </h3>
@@ -125,7 +155,22 @@ const Tokenomics = () => {
               {/* Community & Engagement */}
               <div className="flex-1 p-4 border-b md:border-b-0 md:border-r border-gray-800">
                 <div className="flex items-center mb-4">
-                  <div className="bg-red-600 rounded-full p-2 mr-2">🔥</div>
+                  <div className="bg-red-600 rounded-full p-2 mr-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="size-6"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z"
+                      />
+                    </svg>
+                  </div>
                   <h3 className="text-lg font-semibold">
                     Community & Engagement
                   </h3>
@@ -141,7 +186,22 @@ const Tokenomics = () => {
               {/* Marketplace & Partnerships */}
               <div className="flex-1 p-4 border-b md:border-b-0 md:border-r border-gray-800">
                 <div className="flex items-center mb-4">
-                  <div className="bg-indigo-600 rounded-full p-2 mr-2">🌎</div>
+                  <div className="bg-indigo-600 rounded-full p-2 mr-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="size-6"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"
+                      />
+                    </svg>
+                  </div>
                   <h3 className="text-lg font-semibold">
                     Marketplace & Partnerships
                   </h3>
@@ -161,7 +221,22 @@ const Tokenomics = () => {
               {/* Future Expansion & Innovation */}
               <div className="flex-1 p-4">
                 <div className="flex items-center mb-4">
-                  <div className="bg-pink-600 rounded-full p-2 mr-2">🚀</div>
+                  <div className="bg-pink-600 rounded-full p-2 mr-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="size-6"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418"
+                      />
+                    </svg>
+                  </div>
                   <h3 className="text-lg font-semibold">
                     Future Expansion & Innovation
                   </h3>

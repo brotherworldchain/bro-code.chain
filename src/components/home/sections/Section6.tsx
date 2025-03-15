@@ -13,7 +13,7 @@ const TokenRoadmap = () => {
         backgroundPosition: "center",
       }}
     >
-      <div className="absolute inset-0 bg-black opacity-80"></div>{" "}
+      <div className="absolute inset-0 bg-black opacity-60"></div>{" "}
       <div className="relative container1 bg-gray-900- text-white p-8 rounded-lg shadow-lg">
         <Header3 className="text-3xl font-bold text-center mb-8">
           $PAMON Roadmap

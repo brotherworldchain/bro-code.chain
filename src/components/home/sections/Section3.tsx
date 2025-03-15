@@ -28,7 +28,7 @@ function Section3() {
         backgroundPosition: "center",
       }}
     >
-      <div className="absolute inset-0 bg-black opacity-80"></div>{" "}
+      <div className="absolute inset-0 bg-black opacity-60"></div>{" "}
       <div className=" container1 py-[24px] xl:py-[50px] ">
         <div
           className=" flex xl:gap-[24px] flex-col items-center w-full mb-[24px] xl:mb-[64px]"

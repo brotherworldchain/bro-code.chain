@@ -149,7 +149,7 @@ function AirdropSection() {
         backgroundPosition: "center",
       }}
     >
-      <div className="absolute inset-0 bg-black opacity-80"></div>{" "}
+      <div className="absolute inset-0 bg-black opacity-60"></div>{" "}
       <div className="container1 text-center" data-aos="fade-up">
         <Header3>
           Earn <span className="text-primary">Party Monster Points</span> & Get
