@@ -15,11 +15,11 @@ import { ParagraphLink1 } from "./Text";
 const sections = [
   { id: "home", name: "Home", icon: Home },
   { id: "airdrop", name: "Airdrop", icon: Gift },
-  { id: "about", name: "About", icon: Info },
-  { id: "tokenomics", name: "Tokenomics", icon: PieChart },
+  { id: "about", name: "About", icon: PieChart },
 ];
 
 const moreSections = [
+  { id: "tokenomics", name: "Tokenomics" },
   { id: "roadmap", name: "Roadmap" },
   { id: "hot-venues", name: "Hot Venues (Coming Soon)" },
   { id: "nft-marketplace", name: "NFT Marketplace (Coming Soon)" },
