@@ -8,6 +8,7 @@ import "aos/dist/aos.css";
 import { Suspense } from "react";
 import { WalletContextProvider } from "../context/WalletContext";
 import "@solana/wallet-adapter-react-ui/styles.css";
+import BottomNav from "@/components/BottomNav";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -101,6 +102,7 @@ export default function RootLayout({
             <Navbar />
             {children}
             <Footer />
+            <BottomNav />
           </WalletContextProvider>
         </Suspense>
       </body>

@@ -21,11 +21,26 @@ const Navbar: React.FC = () => {
     "home",
     "airdrop",
     "about",
-    // "presale",
     "tokenomics",
-    // "roadmap",
-    "Hot-Venues (Coming Soon)",
   ];
+
+ const moresections = [
+   "roadmap",
+   "Hot-Venues (Coming Soon)",
+   "NFT Marketplace (Coming Soon)",
+   "Creators Space (Coming Soon)",
+   "VIP Memberships (Coming Soon)", // Exclusive perks for $PAMON holders
+   "Metaverse Raves (Coming Soon)", // Virtual parties & interactive experiences
+   "On-Chain Voting (Coming Soon)", // Community decides event locations & artists
+   "Gamified Rewards (Coming Soon)", // Earn badges, rewards, and exclusive drops
+   "Brand Collaborations (Coming Soon)", // Exclusive brand deals & sponsored events
+   "Live Streaming Integration (Coming Soon)", // Web3-powered event streaming
+   "Merch Store (Coming Soon)", // Party Monster apparel & NFT-linked merch
+   "Augmented Reality Experiences (Coming Soon)", // AR-powered event interactions
+ ];
+
+
+
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
   const closeMenu = () => setMenuOpen(false);
@@ -117,6 +132,21 @@ const Navbar: React.FC = () => {
                 </ParagraphLink1>
               </button>
             ))}
+            <button
+              onClick={toggleMenu}
+              className="focus:outline-none lg:block hidden text-white"
+            >
+              {/* <img
+                src={
+                  menuOpen
+                    ? "https://res.cloudinary.com/dipwsq5cg/image/upload/v1739309674/close_cjqy1g.png"
+                    : "https://res.cloudinary.com/dipwsq5cg/image/upload/v1739309674/menu_fmwnnr.png"
+                }
+                alt="menu"
+                className=" xl:w-[24px] w-[21px] xl:h-[24px] "
+              /> */}
+              <ParagraphLink1>More</ParagraphLink1>
+            </button>
           </div>
 
           {/* <Button
@@ -129,38 +159,32 @@ const Navbar: React.FC = () => {
             <WalletMultiButton>
               {connected ? undefined : "Connect Wallet"}
             </WalletMultiButton>
-            <button
-              onClick={toggleMenu}
-              className="focus:outline-none lg:hidden"
-            >
-              <img
-                src={
-                  menuOpen
-                    ? "https://res.cloudinary.com/dipwsq5cg/image/upload/v1739309674/close_cjqy1g.png"
-                    : "https://res.cloudinary.com/dipwsq5cg/image/upload/v1739309674/menu_fmwnnr.png"
-                }
-                alt="menu"
-                className=" xl:w-[24px] w-[21px] xl:h-[24px] "
-              />
-            </button>
           </div>
         </div>
         {/* Mobile Menu */}
         {menuOpen && (
-          <div className="p-[24px] flex text-white flex-col justify-center items-center">
-            <div className="container1 flex flex-col w-full space-y-[24px] justify-between items-center">
-              {sections.map((id) => (
-                <button key={id} onClick={() => scrollToSection(id)}>
-                  <ParagraphLink1
-                    className={activeSection === id ? "text-primary" : ""}
-                  >
-                    {id.charAt(0).toUpperCase() + id.slice(1)}
-                  </ParagraphLink1>
-                </button>
-              ))}
-              <WalletMultiButton>
-                {connected ? undefined : "Connect Wallet"}
-              </WalletMultiButton>
+          <div className="p-[24px] bg-secondary flex  text-white flex-col justify-center items-center">
+            <div className="container1   flex flex-col w-full space-y-[24px] justify-between items-center">
+              <div
+                onClick={toggleMenu}
+                className="focus:outline-none lg:block hidden text-white xl:flex w-full justify-end"
+              >
+                <ParagraphLink1>X</ParagraphLink1>
+              </div>
+              <div className="w-full max-h-[80vh] flex  flex-col gap-2 items-center justify-center scrollbar-hide overflow-y-auto mt-8">
+                {moresections.map((id) => (
+                  <button key={id} onClick={() => scrollToSection(id)}>
+                    <ParagraphLink1
+                      className={activeSection === id ? "text-primary" : ""}
+                    >
+                      {id.charAt(0).toUpperCase() + id.slice(1)}
+                    </ParagraphLink1>
+                  </button>
+                ))}
+                <WalletMultiButton>
+                  {connected ? undefined : "Connect Wallet"}
+                </WalletMultiButton>
+              </div>
             </div>
           </div>
         )}
