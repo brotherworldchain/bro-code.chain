@@ -56,28 +56,28 @@ function Section3() {
           <div className=" xl:col-span-3 xl:space-y-[20px]">
             <div className="  " data-aos="fade-right">
               <div className="space-y-[12px] xl:space-y-[32px] md:space-y-[32px]">
-                <Header4>Revolutionizing Event Ticketing with NFTs</Header4>
+                <Header4>Innovating Event Ticketing & Web3 Experiences</Header4>
                 <Paragraph1>
-                  Party Monster isn’t just a token—it’s the future of event
-                  access. We’re building a next-generation NFT ticketing
-                  system that will power exclusive parties, global events,
-                  and unforgettable experiences.
+                  Party Monster is redefining how people access events,
+                  experiences, and digital entertainment through NFT-based
+                  ticketing. We're building a seamless, blockchain-powered
+                  system that eliminates scalping, fraud, and barriers to entry.
                 </Paragraph1>
                 <Paragraph1>
-                  $PAMON holders will get access to NFT-based tickets for
-                  events worldwide, from underground raves to massive festivals.
-                  No scalping, no fakes—just seamless, blockchain-powered entry.
+                  $PAMON holders gain exclusive access to NFT event tickets,
+                  rewards, and VIP perks—whether it’s underground music events,
+                  large-scale festivals, or cutting-edge virtual experiences.
                 </Paragraph1>
                 <Paragraph1>
-                  Our vision goes beyond our own events. As we grow, we’ll
-                  empower artists, clubs, and event organizers to create and
-                  manage their own NFT tickets on our platform, making ticketing
-                  more fair, secure, and decentralized than ever before.
+                  But Party Monster is more than just events. We’re creating a
+                  decentralized ecosystem where artists, venues, and creators
+                  can launch their own NFT tickets, manage access, and connect
+                  directly with their audiences.
                 </Paragraph1>
                 <Paragraph1>
-                  With Party Monster, you’re not just buying a ticket—you’re
-                  unlocking a new era of nightlife, community, and limitless
-                  experiences.
+                  This is the future of event access—fair, secure, and powered
+                  by Web3. With Party Monster, you're not just attending events,
+                  you're part of the revolution.
                 </Paragraph1>
               </div>
             </div>
