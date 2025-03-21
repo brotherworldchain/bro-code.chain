@@ -9,6 +9,7 @@ import {
 import Link from "next/link";
 import React from "react";
 import AOS from "aos";
+import BackgroundMusic from "./others/BackgroundMusic3";
 
 function Section3() {
   React.useEffect(() => {
@@ -52,6 +53,7 @@ function Section3() {
                 className="w-full rounded-lg"
               />
             </div>
+            <BackgroundMusic />
           </div>
           <div className=" xl:col-span-3 xl:space-y-[20px]">
             <div className="  " data-aos="fade-right">
@@ -68,6 +70,7 @@ function Section3() {
                   rewards, and VIP perks—whether it’s underground music events,
                   large-scale festivals, or cutting-edge virtual experiences.
                 </Paragraph1>
+
                 <Paragraph1>
                   But Party Monster is more than just events. We’re creating a
                   decentralized ecosystem where artists, venues, and creators
@@ -79,6 +82,8 @@ function Section3() {
                   by Web3. With Party Monster, you're not just attending events,
                   you're part of the revolution.
                 </Paragraph1>
+
+                {/* <BackgroundMusic /> */}
               </div>
             </div>
           </div>

@@ -24,6 +24,7 @@ import {
   arrayUnion,
   increment,
 } from "firebase/firestore";
+import BackgroundMusic from "./others/BackgroundMusic2";
 
 function AirdropSection() {
   const [points, setPoints] = useState<number>(0);
@@ -178,6 +179,7 @@ function AirdropSection() {
               your connected wallet)
             </Paragraph1>
           </div>{" "}
+          <BackgroundMusic />
           <ul className="space-y-4 w-full max-w-[800px]">
             {tasks.map((task, index) => (
               <li
@@ -210,6 +212,8 @@ function AirdropSection() {
       </div>
       <div className="container1 text-center flex justify-center items-center flex-col mt-8 relative">
         <Header5>Your Referral Link (Earn 200 Points for each invite)</Header5>
+        <BackgroundMusic />
+
         <div
           className="mt-2 bg-gray-800 flex justify-center p-3 rounded-lg inline-block- gap-4 w-fit cursor-pointer"
           onClick={copyReferral}

@@ -1,5 +1,6 @@
 import { Header3, Header4, Header5 } from "@/components/Text";
 import React from "react";
+import BackgroundMusic from "./others/BackgroundMusic4";
 
 const TokenRoadmap = () => {
   return (
@@ -56,6 +57,7 @@ const TokenRoadmap = () => {
               <li>Community Voting & Governance</li>
             </ul>
           </div>
+          <BackgroundMusic />
 
           {/* Phase 3 */}
           <div

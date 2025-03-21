@@ -5,6 +5,7 @@ import { Header1, Header3, Paragraph2, Paragraph3 } from "@/components/Text";
 import React from "react";
 import ElevatingBrands from "./others/ElevatingBrands";
 import AOS from "aos";
+import BackgroundMusic from "./others/BackgroundMusic1";
 
 function HeroSection() {
   React.useEffect(() => {
@@ -54,6 +55,7 @@ function HeroSection() {
               </span>{" "}
               and event planning World wide.
             </Header1>
+            <BackgroundMusic />
             <Paragraph3 className="mt-[16px] mb-[30px] text-white">
               $PAMON is more than a token—it's your all-access pass to the
               future of events. Own, trade, and experience the world’s best
@@ -81,6 +83,7 @@ function HeroSection() {
                 <Header3>900 M</Header3>
                 <Paragraph2>Total Supply</Paragraph2>
               </div>
+
               <div>
                 <Header3>Solana</Header3> <Paragraph2>Blockchian</Paragraph2>
               </div>

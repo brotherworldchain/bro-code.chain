@@ -1,4 +1,5 @@
 import { Header3, Header4, Paragraph1 } from "@/components/Text";
+import BackgroundMusic from "./others/BackgroundMusic4";
 
 const Tokenomics = () => {
   return (
@@ -26,6 +27,7 @@ const Tokenomics = () => {
                 900,000,000 $PAMON
               </Paragraph1>
             </div>
+            <BackgroundMusic />
 
             <div className="grid- flex w-full mt-4 justify-center  items-center gap-4">
               <Header4>Token Distribution</Header4>
